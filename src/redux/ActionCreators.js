@@ -6,7 +6,7 @@ import { fetchNewsAPI } from '../services/fetchNews';
 
 
 export const fetchNews = () => (dispatch) => {
-    //dispatch(loadingNews(true));
+    dispatch(loadingNews(true));
 
     return fetch('https://newsapi.org/v2/top-headlines?' +
         'country=us&' + 'pageSize=10&' +
@@ -34,10 +34,10 @@ export const addNews = (news) => ({
     type: ActionTypes.LOAD_NEWS,
     payload: news
 });
-/*export const loadingNews = () => {
+export const loadingNews = () => {
     console.log('loading start')
     return { type: ActionTypes.LOAD_NEWS_LOADING }
-};*/
+};
 
 export const checkUser = () => (dispatch) => {
     console.log('cheking');
@@ -55,4 +55,10 @@ export const logOut = () => (dispatch) => {
     return dispatch(rejectUser());
 }
 
+export const clickMenuButton = (state) => (dispatch) => {
+    console.log('state: ', state);
+    return !state ? dispatch(openMainMenu()) : dispatch(closeMainMenu());
+}
+export const openMainMenu = () => ({ type: ActionTypes.OPEN_MENU });
+export const closeMainMenu = () => ({ type: ActionTypes.CLOSE_MENU });
 

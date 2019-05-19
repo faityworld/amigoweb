@@ -1,8 +1,5 @@
-export const initialState = {
-    news: {},
-    login: false
-};
+
 // receives `action` from the view
-export const Reducer = (state = initialState, action) => {
+export const Reducer = (state, action) => {
     return state;
 };

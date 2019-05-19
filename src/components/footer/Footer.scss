@@ -8,3 +8,10 @@
         justify-content: center;
     }
 }
+
+@media screen and (max-width: 1265px) {        
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }   
+}

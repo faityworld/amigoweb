@@ -10,6 +10,7 @@ import './Main.scss';
 import { checkUser } from '../../redux/ActionCreators';
 import { logOut } from '../../redux/ActionCreators';
 import { fetchNews } from '../../redux/ActionCreators';
+import { clickMenuButton } from '../../redux/ActionCreators';
 import { connect } from 'react-redux';
 
 //import  PrivateRoute  from '../privateRoute/PrivateRoute';
@@ -18,13 +19,15 @@ const mapStateToProps = state => {
 
     return {
         login: state.login,
-        news: state.news
+        news: state.news,
+        clickButton: state.clickButton // maybe it could be managed  locally
     }
 }
 const mapDispatchToProps = (dispatch) => ({
     checkUser: () => { dispatch(checkUser()) },
     logOut: () => { dispatch(logOut()) },
-    fetchNews: () => { dispatch(fetchNews()) }
+    fetchNews: () => { dispatch(fetchNews()) },
+    clickMenuButton: (val) => { dispatch(clickMenuButton(val)) }
 })
 
 class Main extends React.Component {
@@ -32,7 +35,7 @@ class Main extends React.Component {
     componentDidMount() {
         localStorage.removeItem('login');
         this.props.checkUser();
-
+        console.log('props in main: ', this.props);
     }
     
     /*shouldComponentUpdate(nextProp) {
@@ -44,7 +47,7 @@ class Main extends React.Component {
         return (
             <>
                 <div className="wrapper">
-                    <Header login={this.props.login} logOut={ this.props.logOut } />
+                    <Header login={this.props.login} logOut={ this.props.logOut } clickButton = {this.props.clickButton} clickMenuButton = { this.props.clickMenuButton } />
                     <Switch>
                         <Route path="/news" render={() => < News news = { this.props.news } fetchNews = { this.props.fetchNews } />} />
                         <Route path="/login" render={(routerProps) => <LoginPage {...routerProps} login ={this.props.login} checkUser = {this.props.checkUser} />} />

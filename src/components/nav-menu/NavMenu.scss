@@ -23,3 +23,28 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .nav-list {
+        &_mobile {
+            flex-direction: column;
+            width: 320px;
+            padding-top: 30px;
+            margin-bottom: 0;
+            padding-left: 30px;
+            clear: both;
+            
+        }
+        &__item_mobile {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        &__link_mobile {
+            color: #fff;
+            font-size: 1.5em;
+        }
+    }
+    
+    
+
+}

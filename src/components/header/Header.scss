@@ -19,3 +19,27 @@
         }
     }
 }
+@media screen and (max-width: 1265px) {
+        
+    .header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -1500px;
+        transition: right .5s ease;
+        background: #323232;
+        z-index: 1;
+    }
+    .nav_open {
+        right: 0;
+        transition: right .5s ease;
+    }
+}
