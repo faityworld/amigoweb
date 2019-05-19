@@ -6,7 +6,7 @@ import './NavMenu.scss';
 function NavMenu(props) {
 
     function clickHandler() {
-        props.clickMenuButton(props.clickButton);
+        if (window.innerWidth < 601) props.clickMenuButton(props.clickButton);
     }
 
     return (
