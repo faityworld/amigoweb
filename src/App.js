@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-//import Main from './components/main/Main';
+import Main from './components/main/Main';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
-import DynamicLoader from './components/dynamicLoader/DynamicLoader';
-const Main = React.lazy(() => import('./components/main/Main'))
-//import DynamicLoader from './components/dynamicLoader/DynamicLoader';
-
 
 const store = ConfigureStore();
-
 
 class App extends Component {
   
@@ -17,7 +12,7 @@ class App extends Component {
     return (
       <Provider store = {store}>
       <BrowserRouter>
-        <DynamicLoader comp={Main} />
+        <Main />
       </BrowserRouter>
       </Provider>
     );
