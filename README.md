@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It is deployed here [https://amigoweb.herokuapp.com/](https://amigoweb.herokuapp.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
