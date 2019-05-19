@@ -9,7 +9,6 @@ class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
-            loginSuccess: false,
             errMess: null
         };
         this.handleChange = this.handleChange.bind(this);
@@ -39,12 +38,13 @@ class LoginPage extends React.Component {
         return (
             <div className="login">
                 <div className="login__container">
-                    {this.state.errMess && <div className="login__error">{this.state.errMess}</div>}
+                    
                     <form action="" className="form" onSubmit={this.handleSubmit}>
                         <label htmlFor="login" className="form__label">Login</label>
                         <input type="text" className="form__input" id="login" ref = {this.login} name="username" onChange={this.handleChange} value={this.state.username} />
                         <label htmlFor="password" className="form__label">Password</label>
                         <input type="password" className="form__input" id="password" ref = {this.password} name="password" onChange={this.handleChange} value = {this.state.password} />
+                        {this.state.errMess && <div className="form__error">{this.state.errMess}</div>}
                         <button className="form__submit">Log In</button>
                     </form>
                 </div>

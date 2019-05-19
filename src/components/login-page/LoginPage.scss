@@ -3,13 +3,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 0 auto;
-    position: relative;
-    &__error {
-        position: absolute;
-        top: 19%;
-        margin-bottom: 30px;
-        color: var(--red);
-    }
+    
     &__container {
         max-width: 1260px;
         min-width: 280px;
@@ -18,11 +12,18 @@
 }
 
 .form {
+    position: relative;
     &__label {
         display: block;
         margin-top: 0;
         margin-bottom: 15px;
         width: 323px;
+    }
+    &__error {
+        position: absolute;
+        bottom: 100px;
+        margin-bottom: 30px;
+        color: var(--red);
     }
     &__input {
         display: block;
@@ -62,3 +63,4 @@
         }
     }
 }
+
