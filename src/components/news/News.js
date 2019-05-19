@@ -1,25 +1,21 @@
 import React from 'react';
-import Preloader from '../preloader/Preloader';
 import './News.scss';
-import DynamicLoader from '../../DynamicLoader';
 
-/** We call fetchNews to fetch news every time the component is loading and control updating with shouldComponentUpdaten in Main.
- * The another way to avoit infinite call fetchNews is to connect this component to Redux directly and call fetchNews in componentDidMount
+/** We could call fetchNews in the main component in this case news will not be updated every time we call it
  */
-class  News extends React.Component {
+class News extends React.Component {
     componentDidMount() {
-        this.props.props.fetchNews();
-        console.log('props; ', this.props.news);
+        this.props.fetchNews();
     }
-    
+
     render() {
         return (
             <>
-                (<div className="news">
+                <div className="news">
                     <div className="news__container">
                         <h2 className="news__title">News:</h2>
                         <ul className="news__list">
-                            {this.props.props.news.news.map((item) => {
+                            {this.props.news.news.map((item) => {
                                 return (
                                     <li key={item.title} className="news__li">
                                         <a className="news__a" href={item.url} target="_blank" rel="noopener noreferrer">
@@ -32,12 +28,12 @@ class  News extends React.Component {
                             })}
                         </ul>
                     </div>
-                </div>)}
-    
+                </div>}
+
             </>
-        ) 
+        )
     }
-    
+
 }
 
 export default News;
