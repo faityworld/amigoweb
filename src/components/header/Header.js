@@ -6,7 +6,7 @@ import HeaderButton from '../header-button/HeaderButton';
 import './Header.scss';
 
 function Header(props) {
-    console.log('props in header: ', props);
+
     return (
         <header className="header">
             <div className="header__container">

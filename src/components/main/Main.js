@@ -35,14 +35,8 @@ class Main extends React.Component {
     componentDidMount() {
         localStorage.removeItem('login');
         this.props.checkUser();
-        console.log('props in main: ', this.props);
     }
-    
-    /*shouldComponentUpdate(nextProp) {
-        let flag = JSON.stringify(nextProp.news.news) === JSON.stringify(this.props.news.news) && nextProp.login === this.props.login;
-        return flag ? false : true;
-    }*/
-
+   
     render() {
         return (
             <>
@@ -52,8 +46,6 @@ class Main extends React.Component {
                         <Route path="/news" render={() => < News news = { this.props.news } fetchNews = { this.props.fetchNews } />} />
                         <Route path="/login" render={(routerProps) => <LoginPage {...routerProps} login ={this.props.login} checkUser = {this.props.checkUser} />} />
                         <Route exact path="/" component={Section_1} />
-                        {/*<PrivateRoute  path="/profile" component={() => <Profile />} login = {this.props.login} checkUser={this.props.checkUser} /> */}
-
                         <Route exact path="/profile" render={() => ( !this.props.login ? (<Redirect to="/login" />) : (<Profile />))           
                         } />
                     </Switch>

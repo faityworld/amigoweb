@@ -1,14 +1,15 @@
-export function fetchNewsAPI() {
-    return fetch('https://newsapi.org/v2/top-headlines?' +
-        'country=us&' + 'pageSize=10&' +
-        'apiKey=3001fa4a68f744de993966133042a8f5')
-        .then(response => {
-            if (response.ok) return response;
-            else {
-                var error = new Error('Error ' + response.status + ':' + response.statusText);
-                error.response = response;
-                throw error;
-            }
-        })
-        .then(response => response.json());
+
+export async function fetchNewsService() {
+    try {
+        let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=3001fa4a68f744de993966133042a8f5');
+
+        if (response.ok) {
+            let result = response.json();
+            return result;
+        }
+        else throw new Error(response.status); 
+    }
+    catch(err) {
+        throw new Error(err.message);
+    }
 }

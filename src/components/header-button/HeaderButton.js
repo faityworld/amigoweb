@@ -2,7 +2,7 @@ import React from 'react';
 import './HeaderButton.scss';
 
 function HeaderButton(props) {
-    console.log('props in HeaderBUtton: ', props.clickButton);
+
     function handleClick() {
         props.clickMenuButton(props.clickButton);
     }
