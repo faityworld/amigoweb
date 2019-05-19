@@ -12,6 +12,7 @@ import { logOut } from '../../redux/ActionCreators';
 import { fetchNews } from '../../redux/ActionCreators';
 import { clickMenuButton } from '../../redux/ActionCreators';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 //import  PrivateRoute  from '../privateRoute/PrivateRoute';
 
@@ -54,6 +55,16 @@ class Main extends React.Component {
             </>
         )
     }
+}
+
+Main.propTypes = {
+    clickButton: PropTypes.bool,
+    login: PropTypes.bool,
+    news: PropTypes.object,
+    checkUser: PropTypes.func,
+    fetchNews: PropTypes.func,
+    clickMenuButton: PropTypes.func,
+    logOut: PropTypes.func
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
