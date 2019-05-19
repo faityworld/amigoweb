@@ -10,6 +10,8 @@
     outline: none;
     cursor: pointer;
     background: white;
+    width: 90px;
+    text-align: right;
     &:hover {
         color: gray;
         transition: color 0.5s ease;
