@@ -1,0 +1,16 @@
+.login-button {
+    color: var(--bl);
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    transition: color 0.5s ease;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: gray;
+        transition: color 0.5s ease;
+    }
+}

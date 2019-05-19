@@ -1,0 +1,21 @@
+.header {
+    &__container {
+        max-width: 1260px;
+        min-width: 280px;
+        margin: 15px auto 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        color: var(--red);
+        text-decoration: none;
+        font-size: 2em;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        &:hover {
+            color: gray;
+            transition: all 0.3s ease;
+        }
+    }
+}

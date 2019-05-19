@@ -1,0 +1,34 @@
+.news {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    &__container {
+        max-width: 1260px;
+        min-width: 280px;
+        margin: 0 auto;
+    }
+    &__title {
+        font-size: 2.5em;
+        text-align: center;
+    }
+    &__list {
+        list-style: none;
+        padding-left: 0;
+    }
+    &__li {
+        border-left: 2px solid var(--red);
+        padding: 5px 15px;
+        margin-bottom: 30px;
+        &:hover {
+            border-left: 2px solid gray;
+            background: rgb(245, 245, 245);
+        }
+    }
+    &__a {
+        color: var(--bl);
+        text-decoration: none;
+        &:visited {
+            color: gray;
+        }
+    }
+}

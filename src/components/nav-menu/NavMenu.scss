@@ -1,0 +1,25 @@
+.nav-list {
+    display: flex;
+    list-style: none;
+    font-size: 1em;
+    padding-left: 0;
+    &__item {
+        padding: 0 24px;
+        /*&:hover .nav-list__link {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }*/
+    }
+    &__link {
+        text-decoration: none;
+        color: rgb(33, 33, 33);
+        color: var(--bl);
+        letter-spacing: 0.8px;
+        line-height: 30px;
+        transition: all 0.3s ease;
+        &:hover {
+            color: var(--red);
+            border-bottom: 1px solid var(--red);
+            transition: all 0.3s ease;
+        }
+    }
+}
