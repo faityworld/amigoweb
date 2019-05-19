@@ -13,7 +13,7 @@ function Header(props) {
                 <Link to="/" href="#" className="header__logo">LOGO</Link>
                 <nav className={props.clickButton ? "nav nav_open" : "nav"}>
                     <HeaderButton clickButton={ props.clickButton } clickMenuButton = { props.clickMenuButton } floatRight = "header__button_right" />
-                    <NavMenu mobileMenu ={true} />
+                    <NavMenu mobileMenu ={true} clickButton={ props.clickButton } clickMenuButton = { props.clickMenuButton } />
                 </nav>
                 <LoginButton login ={props.login} logOut={ props.logOut } />
                 <HeaderButton clickButton={ props.clickButton } clickMenuButton = { props.clickMenuButton } />
