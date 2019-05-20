@@ -5,7 +5,6 @@ import { loginService } from '../../services/loginService';
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
-        /** According to React community manage form state locally */
         this.state = {
             username: '',
             password: '',
