@@ -34,7 +34,6 @@ const mapDispatchToProps = (dispatch) => ({
 class Main extends React.Component {
 
     componentDidMount() {
-        localStorage.removeItem('login');
         this.props.checkUser();
     }
    
