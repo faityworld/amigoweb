@@ -1,7 +1,8 @@
 
 export async function fetchNewsService() {
     try {
-        let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=3001fa4a68f744de993966133042a8f5');
+        let key = process.env.REACT_APP_NEWS;
+        let response = await fetch('https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey='+key);
 
         if (response.ok) {
             let result = response.json();
